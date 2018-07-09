@@ -1,12 +1,14 @@
 # Reden snap
 
-Snap pacakge for the `reden-cli`, `reden-tx`, `redend`, and `reden-qt` binaries for easy installation on Linux systems. Check the [Reden repostory](https://github.com/RedenCore/Reden) for more information about the Reden project.
+Snap package for the `kyd-cli`, `kyd-tx`, `kydd`, and `kyd-qt` binaries for easy installation on Linux systems. Check the [KYD repostory](https://github.com/kydcoin/KYD) for more information about the KYD project.
 
-It's currently only tested on Ubuntu 18.04 with X11, so please test on other desktop environments if you will.
+It's currently only tested on Solus OS with X11, so please test on other desktop environments if you will.
 
 <details>
-  <summary>What is Reden?</summary>
-  <p>Reden is a fully decentralised cryptocurrency built on the premise of providing anonymity, speed, fair mining by being ASIC-resistant and reliability by the usage of masternodes.</p>
+  <summary>What is KYD?</summary>
+  <p>KYD Core is a decentralized, peer-to-peer cryptocurrency with a primary focus on energy-efficiency and scalabilty. The KYD Network makes use of only Proof-of-Stake mining, in the form of masternodes and staking. This means that the KYD blockchain has a very low impact on the environment and ensures that scaling will be a smooth transition in future.
+
+Furthermore, as result of offering multiple ways for users to mint new KYD coins, the network is a lot less centralized than some Proof-of-Work coins that have their hashrates dominated by one or two mining pools..</p>
 </details>
 
 <details>
@@ -18,20 +20,20 @@ It's currently only tested on Ubuntu 18.04 with X11, so please test on other des
 
 > **DISCLAIMER**
 >
-> This repository is purely intended as an exercise in creating snap packages. Don't use this wallet to store crypto without a proper audit of both the snap and the upstream Reden repository. In other words: don't trust random code on the interwebs!
+> This repository is purely intended as an exercise in creating snap packages. Don't use this wallet to store crypto without a proper audit of both the snap and the upstream KYD repository. In other words: don't trust random code on the interwebs!
 
 # Installing
 
 On any snap enabled Linux system:
 
 ```
-$ snap install reden-cimm --edge
-$ reden-cimm.reden-qt
+$ snap install kyd-thebeard --edge
+$ kyd-thebeard.kyd-qt
 ```
 
-You can now see all installed applications by running `snap info reden-cimm`.
+You can now see all installed applications by running `snap info kyd-thebeard`.
 
-Note: the final package should obviously be named `reden` and not `reden-cimm` but I don't want to squat that name, I'll leave that up to the Reden team.
+Note: the final package should obviously be named `kyd` and not `kyd-thebeard` but I don't want to squat that name, I'll leave that up to the KYD team.
 
 # Building
 
@@ -43,15 +45,16 @@ From the root directory of this repository run:
 
 ```bash
 $ snapcraft cleanbuild
-$ snap install reden-cimm_0.1_amd64.snap --dangerous
+$ snap install kyd-thebeard_0.1_amd64.snap --dangerous
 ```
 
 You can use `snapcraft cleanbuild --debug` to be dropped in the container's shell if the build fails.
 
 # Known issues
 
-- Starting reden-qt throws an AppArmor warning related to dbus. This is [fixed](https://github.com/snapcore/snapd/pull/5189) in `snapd` so should resolved itself in a future `snapd` release.
+- Starting kyd-qt throws an AppArmor warning related to dbus. This is [fixed](https://github.com/snapcore/snapd/pull/5189) in `snapd` so should resolved itself in a future `snapd` release.
 
 # License
 
-This repository is licensed under the [MIT license](LICENSE). The Reden application icon is a cropped copy of the [splash.png](https://github.com/RedenCore/Reden/blob/master/splash.png) image from the [Reden project](https://github.com/RedenCore/Reden) and also MIT licensed.
+This repository is licensed under the [MIT license](LICENSE). The KYD application icon is a cropped copy of the [splash.png](https://github.com/kydcoin/KYD/blob/master/splash.png) image from the [KYD project](https://github.com/kydcoin/KYD) and also MIT licensed.
+The repository is based on the prelimary work that has been done by [cimm](https://github.com/cimm/). He figured out all the hard parts of the snap code to make it work.
